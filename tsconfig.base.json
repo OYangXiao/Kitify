@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "lib": ["esnext", "dom", "DOM.Iterable"],
+    "importHelpers": true,
+    "strict": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDecoratorMetadata": false,
+    "experimentalDecorators": false,
+    "removeComments": false,
+    "forceConsistentCasingInFileNames": true
+  }
+}
