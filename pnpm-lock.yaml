@@ -1,0 +1,238 @@
+lockfileVersion: '6.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      '@biomejs/biome':
+        specifier: ^1.6.3
+        version: 1.6.3
+
+  packages/result:
+    devDependencies:
+      '@types/node':
+        specifier: '20'
+        version: 20.11.30
+      tslib:
+        specifier: latest
+        version: 2.6.2
+      typedoc:
+        specifier: latest
+        version: 0.25.12(typescript@5.4.3)
+      typescript:
+        specifier: latest
+        version: 5.4.3
+
+  packages/serde:
+    devDependencies:
+      '@types/node':
+        specifier: '20'
+        version: 20.11.30
+      tslib:
+        specifier: latest
+        version: 2.6.2
+      typedoc:
+        specifier: latest
+        version: 0.25.12(typescript@5.4.3)
+      typescript:
+        specifier: latest
+        version: 5.4.3
+
+  packages/version:
+    devDependencies:
+      '@types/node':
+        specifier: '20'
+        version: 20.11.30
+      tslib:
+        specifier: latest
+        version: 2.6.2
+      typedoc:
+        specifier: latest
+        version: 0.25.12(typescript@5.4.3)
+      typescript:
+        specifier: latest
+        version: 5.4.3
+
+packages:
+
+  /@biomejs/biome@1.6.3:
+    resolution: {integrity: sha512-Xnp/TIpIcTnRA4LwerJuoGYQJEqwXtn5AL0U0OPXll/QGbAKmcUAfizU880xTwZRD4f53iceqODLDaD3wxYlIw==}
+    engines: {node: '>=14.*'}
+    hasBin: true
+    requiresBuild: true
+    optionalDependencies:
+      '@biomejs/cli-darwin-arm64': 1.6.3
+      '@biomejs/cli-darwin-x64': 1.6.3
+      '@biomejs/cli-linux-arm64': 1.6.3
+      '@biomejs/cli-linux-arm64-musl': 1.6.3
+      '@biomejs/cli-linux-x64': 1.6.3
+      '@biomejs/cli-linux-x64-musl': 1.6.3
+      '@biomejs/cli-win32-arm64': 1.6.3
+      '@biomejs/cli-win32-x64': 1.6.3
+    dev: true
+
+  /@biomejs/cli-darwin-arm64@1.6.3:
+    resolution: {integrity: sha512-0E8PGu3/8HSkBJdtjno+niJE1ANS/12D7sPK65vw5lTBYmmaYwJdfclDp6XO0IAX7uVd3/YtXlsEua0SVrNt3Q==}
+    engines: {node: '>=14.*'}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@biomejs/cli-darwin-x64@1.6.3:
+    resolution: {integrity: sha512-UWu0We/aIRtWXgJKe6ygWt2xR0yXs64BwWqtZbfxBojRn3jgW8UdFAkV5yiUOX3TQlsV6BZH1EQaUAVsccUeeA==}
+    engines: {node: '>=14.*'}
+    cpu: [x64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@biomejs/cli-linux-arm64-musl@1.6.3:
+    resolution: {integrity: sha512-AntGCSfLN1nPcQj4VOk3X2JgnDw07DaPC8BuBmRcsRmn+7GPSWLllVN5awIKlRPZEbGJtSnLkTiDc5Bxw8OiuA==}
+    engines: {node: '>=14.*'}
+    cpu: [arm64]
+    os: [linux]
+    libc: [musl]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@biomejs/cli-linux-arm64@1.6.3:
+    resolution: {integrity: sha512-wFVkQw38kOssfnkbpSh6ums5TaElw3RAt5i/VZwHmgR2nQgE0fHXLO7HwIE9VBkOEdbiIFq+2PxvFIHuJF3z3Q==}
+    engines: {node: '>=14.*'}
+    cpu: [arm64]
+    os: [linux]
+    libc: [glibc]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@biomejs/cli-linux-x64-musl@1.6.3:
+    resolution: {integrity: sha512-GelAvGsUwbxfFpKLG+7+dvDmbrfkGqn08sL8CMQrGnhjE1krAqHWiXQsjfmi0UMFdMsk7hbc4oSAP+1+mrXcHQ==}
+    engines: {node: '>=14.*'}
+    cpu: [x64]
+    os: [linux]
+    libc: [musl]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@biomejs/cli-linux-x64@1.6.3:
+    resolution: {integrity: sha512-vyn8TQaTZg617hjqFitwGmb1St5XXvq6I3vmxU/QFalM74BryMSvYCrYWb2Yw/TkykdEwZTMGYp+SWHRb04fTg==}
+    engines: {node: '>=14.*'}
+    cpu: [x64]
+    os: [linux]
+    libc: [glibc]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@biomejs/cli-win32-arm64@1.6.3:
+    resolution: {integrity: sha512-Gx8N2Tixke6pAI1BniteCVZgUUmaFEDYosdWxoaCus15BZI/7RcBxhsRM0ZL/lC66StSQ8vHl8JBrrld1k570Q==}
+    engines: {node: '>=14.*'}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@biomejs/cli-win32-x64@1.6.3:
+    resolution: {integrity: sha512-meungPJw64SqoR7LXY1wG7GC4+4wgpyThdFUMGXa6PCe0BLFOIOcZ9VMj9PstuczMPdgmt/BUMPsj25dK1VO8A==}
+    engines: {node: '>=14.*'}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@types/node@20.11.30:
+    resolution: {integrity: sha512-dHM6ZxwlmuZaRmUPfv1p+KrdD1Dci04FbdEm/9wEMouFqxYoFl5aMkt0VMAUtYRQDyYvD41WJLukhq/ha3YuTw==}
+    dependencies:
+      undici-types: 5.26.5
+    dev: true
+
+  /ansi-sequence-parser@1.1.1:
+    resolution: {integrity: sha512-vJXt3yiaUL4UU546s3rPXlsry/RnM730G1+HkpKE012AN0sx1eOrxSu95oKDIonskeLTijMgqWZ3uDEe3NFvyg==}
+    dev: true
+
+  /balanced-match@1.0.2:
+    resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
+    dev: true
+
+  /brace-expansion@2.0.1:
+    resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}
+    dependencies:
+      balanced-match: 1.0.2
+    dev: true
+
+  /jsonc-parser@3.2.1:
+    resolution: {integrity: sha512-AilxAyFOAcK5wA1+LeaySVBrHsGQvUFCDWXKpZjzaL0PqW+xfBOttn8GNtWKFWqneyMZj41MWF9Kl6iPWLwgOA==}
+    dev: true
+
+  /lunr@2.3.9:
+    resolution: {integrity: sha512-zTU3DaZaF3Rt9rhN3uBMGQD3dD2/vFQqnvZCDv4dl5iOzq2IZQqTxu90r4E5J+nP70J3ilqVCrbho2eWaeW8Ow==}
+    dev: true
+
+  /marked@4.3.0:
+    resolution: {integrity: sha512-PRsaiG84bK+AMvxziE/lCFss8juXjNaWzVbN5tXAm4XjeaS9NAHhop+PjQxz2A9h8Q4M/xGmzP8vqNwy6JeK0A==}
+    engines: {node: '>= 12'}
+    hasBin: true
+    dev: true
+
+  /minimatch@9.0.3:
+    resolution: {integrity: sha512-RHiac9mvaRw0x3AYRgDC1CxAP7HTcNrrECeA8YYJeWnpo+2Q5CegtZjaotWTWxDG3UeGA1coE05iH1mPjT/2mg==}
+    engines: {node: '>=16 || 14 >=14.17'}
+    dependencies:
+      brace-expansion: 2.0.1
+    dev: true
+
+  /shiki@0.14.7:
+    resolution: {integrity: sha512-dNPAPrxSc87ua2sKJ3H5dQ/6ZaY8RNnaAqK+t0eG7p0Soi2ydiqbGOTaZCqaYvA/uZYfS1LJnemt3Q+mSfcPCg==}
+    dependencies:
+      ansi-sequence-parser: 1.1.1
+      jsonc-parser: 3.2.1
+      vscode-oniguruma: 1.7.0
+      vscode-textmate: 8.0.0
+    dev: true
+
+  /tslib@2.6.2:
+    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+    dev: true
+
+  /typedoc@0.25.12(typescript@5.4.3):
+    resolution: {integrity: sha512-F+qhkK2VoTweDXd1c42GS/By2DvI2uDF4/EpG424dTexSHdtCH52C6IcAvMA6jR3DzAWZjHpUOW+E02kyPNUNw==}
+    engines: {node: '>= 16'}
+    hasBin: true
+    peerDependencies:
+      typescript: 4.6.x || 4.7.x || 4.8.x || 4.9.x || 5.0.x || 5.1.x || 5.2.x || 5.3.x || 5.4.x
+    dependencies:
+      lunr: 2.3.9
+      marked: 4.3.0
+      minimatch: 9.0.3
+      shiki: 0.14.7
+      typescript: 5.4.3
+    dev: true
+
+  /typescript@5.4.3:
+    resolution: {integrity: sha512-KrPd3PKaCLr78MalgiwJnA25Nm8HAmdwN3mYUYZgG/wizIo9EainNVQI9/yDavtVFRN2h3k8uf3GLHuhDMgEHg==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: true
+
+  /undici-types@5.26.5:
+    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+    dev: true
+
+  /vscode-oniguruma@1.7.0:
+    resolution: {integrity: sha512-L9WMGRfrjOhgHSdOYgCt/yRMsXzLDJSL7BPrOZt73gU0iWO4mpqzqQzOz5srxqTvMBaR0XZTSrVWo4j55Rc6cA==}
+    dev: true
+
+  /vscode-textmate@8.0.0:
+    resolution: {integrity: sha512-AFbieoL7a5LMqcnOF04ji+rpXadgOXnZsxQr//r83kLPr7biP7am3g9zbaZIaBGwBRWeSvoMD4mgPdX3e4NWBg==}
+    dev: true
