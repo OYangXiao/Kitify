@@ -1,8 +1,8 @@
-import { OptionType, OptionSomeTypes } from "./base";
+import { Option, OptionSomeTypes } from "./base";
 import { None } from "./none";
 import { Some } from "./some";
 
-export type Option<T> = OptionType<T>
+export type Option<T> = Option<T>
 
 export namespace Option {
     /**

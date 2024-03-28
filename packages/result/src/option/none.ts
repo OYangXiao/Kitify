@@ -1,36 +1,49 @@
-import { BaseOption, OptionType } from "./base";
+import { BaseOption, Option } from "./base";
 import { Some } from "./some";
+
+const name = 'Option Type: None'
 
 
 /**
  * Contains the None value
  */
-class NoneImpl implements BaseOption<never> {
+class NoneImpl<T> implements BaseOption<T> {
 
-  is_some = (): this is Some<never> => false;
-  is_some_and = (_predicate: (val: never) => boolean): boolean => false;
-  is_none = (): this is None => true;
+  is_some = (): this is Some<T> => false;
+  is_some_and = return_false;
+  is_none = (): this is None<T> => true;
 
-  unwrap_or_default = <T2>(val: T2) => val;
-  unwrap_or_else = <T2>(f: () => T2) => f();
-  unwrap(): never { throw new Error('failed to unwrap: this option is "None".') }
+  unwrap = throw_None;
 
-  and_then = () => None;
-  or_else = <T2>(op: OptionType<T2> | (() => OptionType<T2>)) =>
-    typeof op === 'function' ? (op as (() => OptionType<T2>))() : op;
+  unwrap_or = (v: T) => v;
+  unwrap_or_else = (f: () => T) => f();
 
-  map_some = <T2>(_op: (val: never) => T2): OptionType<T2> => None;
-  map_none = <T2>(op: () => T2): OptionType<T2> => Some(op());
+  and = return_None;
+  and_then = return_None;
+
+  or = (v: Option<T>) => v;
+  or_else = (f: () => Option<T>) => f();
+
+  map = <T2>(param: { default?: T2; none?: () => T2; }) =>
+    param.none ? Some(param.none()) : param.default ? Some(param.default) : this;
 
   inspect_some = () => this
-  inspect_none = (op: () => void) => { op(); return this }
+  inspect_none = (f: () => never) => { f() }
 
-  to_result = <E>(error: E): Err<E> => Err(error);
+  to_result = <E>(error: E): Result<T, E> => Err(error);
+
+  toString = return_name;
 }
 
+const exception_error = new Error(`failed to unwrap: this is ${name}`);
+
+const None = Object.freeze(new NoneImpl())
+const return_None = () => None;
+const return_false = () => false;
+const throw_None = () => { throw exception_error };
+const return_name = () => name;
+
 // Export None as a singleton, then freeze it so it can't be modified
-export const None = new NoneImpl();
-export type None = NoneImpl;
-Object.freeze(None);
+export type None<T> = NoneImpl<T>;
 
 

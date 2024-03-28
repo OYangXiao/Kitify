@@ -1,38 +1,36 @@
-import { BaseOption, OptionType } from "./base";
+import { BaseOption, Option } from "./base";
 import { None } from "./none";
 
 /**
  * Contains the success value
  */
 class SomeImpl<T> implements BaseOption<T> {
-  readonly #val!: T;
-  constructor(val: T) { this.#val = val }
+  readonly #v!: T;
+  constructor(v: T) { this.#v = v }
 
   is_some = (): this is Some<T> => true;
-  is_some_and = (predicate: (val: T) => boolean) => predicate(this.#val);
-  is_none = (): this is None => false;
+  is_some_and = (predicate: (val: T) => boolean) => predicate(this.#v);
+  is_none = (): this is None<T> => false;
 
-  unwrap = () => this.#val;
-  unwrap_or = (_val: unknown) => this.#val;
+  unwrap = () => this.#v;
+  unwrap_or = this.unwrap;
+  unwrap_or_else = this.unwrap;
 
-  and_then = <T2>(op: OptionType<T2> | ((val: T) => OptionType<T2>)): OptionType<T2> =>
-    typeof op === 'function' ? op(this.#val) : op;
-  or_else<T2>(_op: OptionType<T2> | (() => OptionType<T2>)): OptionType<T | T2> {
-    return this as Some<T | T2>;
-  }
+  and = <T2>(v: Option<T2>) => v;
+  and_then = <T2>(f: (val: T) => Option<T2>) => f(this.#v)
 
-  map_some = <T2>(op: (val: T) => T2): OptionType<T2> => Some(op(this.#val));
-  map_none = <T2>(op: () => T2): OptionType<T2> => Some(op());
+  or = (_v: Option<T>) => this
+  or_else = (_f: () => Option<T>) => this
 
-  inspect_some = (op: (val: T) => void) => {
-    op(this.#val);
-    return this;
-  }
+  map = <T2>(param: { some?: ((v: T) => T2) }) =>
+    param.some ? Some(param.some(this.#v)) : this;
+
+  inspect_some = (f: (val: T) => never) => { f(this.#v) }
   inspect_none = () => this
 
-  to_result = <E>(_error: E): Result<T, E> => Ok(this.#val);
+  to_result = <E>(_error: E): Result<T, E> => Ok(this.#v);
 
-  toString = () => `Some: ${this.#val}`;
+  toString = () => `Option Type: Some, value: ${String(this.#v)}`;
 }
 
 // This allows Some to be callable - possible because of the es5 compilation target
